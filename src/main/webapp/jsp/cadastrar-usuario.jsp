@@ -12,9 +12,18 @@
 	<h1>Cadastrar usuário</h1>
 	
 	<form action="cadastroDeUsuario" method="post">
+		Nome do usuário
 		<input type="text" name="nomeDoUsuario" />
+		<br />
+		Data de nasimento
+		<input type="text" name="dataDeNascimento" />
+		<br />
+		Email do usuário
 		<input type="text" name="emailDoUsuario" />
+		<br />
+		Senha do usuário
 		<input type="text" name="senhaDoUsuario" />
+		<br />
 		
 		<input type="submit" name="cadastrar" />
 	</form>

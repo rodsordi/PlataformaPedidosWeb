@@ -1,8 +1,9 @@
-package br.com.galerinha.model;
+package br.com.galerinha.dto;
 
-public class Usuario {
+public class UsuarioDTO {
 	
 	private String nomeDoUsuario;
+	private String dataNascimento;
 	private String emailDoUsuario;
 	private String senhaDoUsuario;
 	
@@ -23,6 +24,12 @@ public class Usuario {
 	}
 	public void setSenhaDoUsuario(String senhaDoUsuario) {
 		this.senhaDoUsuario = senhaDoUsuario;
+	}
+	public String getDataNascimento() {
+		return dataNascimento;
+	}
+	public void setDataNascimento(String dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
 	
 }
