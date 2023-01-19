@@ -2,7 +2,7 @@
 
 Projeto de estudo da galerinha
 
-## Pré-Requisitos
+## 📋 Pré-Requisitos
 
 * [Eclipse](https://www.eclipse.org/downloads/) 2022-06 (4.24.0)+
 
@@ -12,7 +12,7 @@ Projeto de estudo da galerinha
 
 * [apache-tomcat](https://tomcat.apache.org/download-10.cgi) 10.0.27
 
-## Configurando o Eclipse
+## 🚀 Configurando o Eclipse
 
 * Window -> Preferences -> Java -> Installed JREs -> Add.. -> Standard VM -> JRE home: "%JAVA_HOME%" -> Apply and Close
 
@@ -20,7 +20,7 @@ Projeto de estudo da galerinha
 
 * Window -> Preferences -> Server -> Runtime Environment -> Add... -> Apache -> Apache Tomcat v10.0 -> Next -> Tomcat installation directory: "%TOMCAT_HOME%" -> JRE: "jdk-17.0.1" -> Finish -> Apply and Close
 
-## Instalação
+## 🔧 Instalação
 
 * Abra o navegador e acesse o endereço: [github](https://github.com/rodsordi/PlataformaPedidosWeb)
 
@@ -29,7 +29,7 @@ Projeto de estudo da galerinha
 git clone https://github.com/rodsordi/PlataformaPedidosWeb.git
 ```
 
-### Importando projeto no Eclipse 
+### 🦝 Importando projeto no Eclipse 
 * File -> Import... -> Maven -> Existing Maven Project -> Next -> Root Directory: "%PROJECT_ROOT%" -> Check: "pom.xml" -> Finish
 
 * Project Explorer -> Selecione o projeto -> Botão direito -> Maven -> Update Project... -> OK
@@ -40,8 +40,16 @@ git clone https://github.com/rodsordi/PlataformaPedidosWeb.git
 
 * Servers -> Double click em "Tomcat v10.0 Server at localhost" -> Server Locations -> Use Tomcat installation (takes control of Tomcat installation) -> Save
 
-## Iniciando aplicação
+## 🙈 Iniciando aplicação
 
 * Servers -> Selecione "Tomcat v10.0 Server at localhost" -> Botão direito do mouse -> Debug
 
 * Abra o navegador -> Acesse a [home](http://localhost:8080/PlataformaPedidoWeb/)
+
+## 📌 Versão
+
+Usado [SemVer](http://semver.org/) para controle de versão. Para as versões disponíveis, observe as [tags neste repositório](https://https://github.com/rodsordi/MiniAutorizador/tags).
+
+## ✒️ Autores
+
+* **Rodrigo de Sordi** - *Dev* - [rodsordi](https://github.com/rodsordi)
