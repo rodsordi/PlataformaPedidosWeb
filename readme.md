@@ -12,6 +12,10 @@ Projeto de estudo da galerinha
 
 * [apache-tomcat](https://tomcat.apache.org/download-10.cgi) 10.0.27
 
+* [docker](https://www.docker.com/products/docker-desktop/)
+
+* [workbench](https://dev.mysql.com/downloads/workbench/)
+
 ## 🚀 Configurando o Eclipse
 
 * Window -> Preferences -> Java -> Installed JREs -> Add.. -> Standard VM -> JRE home: "%JAVA_HOME%" -> Apply and Close
@@ -28,6 +32,21 @@ Projeto de estudo da galerinha
 ```terminal
 git clone https://github.com/rodsordi/PlataformaPedidosWeb.git
 ```
+
+### 🐳 Docker
+
+* Search: "mysql" -> Images -> DOCKER OFFICIAL IMAGE -> Pull
+
+* Images -> mysql -> run -> Optional settings -> Container name: "mysql-galerinha" -> Host port: "3306" -> Host port: "33060" -> Environment variable:  "MYSQL_ROOT_PASSWORD":"password" -> Run
+
+### 🐬 Workbench
+
+* Database -> Menage Connection ... -> New -> Connection Name: "galerinha-db" -> Password: Store in Vault: "password" -> Test connection -> Close
+
+* Database -> Connect to Database... -> Stored connection: "galerinha-db" -> OK
+
+* File -> SQL Script ... -> "%PROJECT_ROOT%/dml.sql" -> Abrir -> Clica em ⚡
+
 
 ### 🦝 Importando projeto no Eclipse 
 * File -> Import... -> Maven -> Existing Maven Project -> Next -> Root Directory: "%PROJECT_ROOT%" -> Check: "pom.xml" -> Finish
