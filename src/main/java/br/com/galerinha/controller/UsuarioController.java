@@ -1,6 +1,5 @@
 package br.com.galerinha.controller;
 
-import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -8,38 +7,14 @@ import org.apache.commons.lang3.StringUtils;
 
 import br.com.galerinha.business.UsuarioBusiness;
 import br.com.galerinha.dto.UsuarioDTO;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import br.com.galerinha.entity.UsuarioEntity;
 
-@WebServlet("/cadastroDeUsuario")
-public class UsuarioController extends HttpServlet {
+
+public class UsuarioController {
 	
 	private UsuarioBusiness usuarioBusiness = new UsuarioBusiness();
 	
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		req.getRequestDispatcher("jsp/cadastrar-usuario.jsp").forward(req, resp);
-	}
-	
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String nomeDoUsuario = req.getParameter("nomeDoUsuario");
-		String dataDeNascimento = req.getParameter("dataDeNascimento");
-		String emailDoUsuario = req.getParameter("emailDoUsuario");
-		String senhaDoUsuario = req.getParameter("senhaDoUsuario");
-		
-		UsuarioDTO usuarioDTO = new UsuarioDTO();
-		usuarioDTO.setNomeDoUsuario(nomeDoUsuario);
-		usuarioDTO.setDataNascimento(dataDeNascimento);
-		usuarioDTO.setEmailDoUsuario(emailDoUsuario);
-		usuarioDTO.setSenhaDoUsuario(senhaDoUsuario);
-		
-		req.setAttribute("nomeDoUsuario", nomeDoUsuario);
-		
+	public void salvarUsuario(UsuarioDTO usuarioDTO) {
 		if (StringUtils.isEmpty(usuarioDTO.getNomeDoUsuario()))
 			throw new RuntimeException("Nome do usuário dever ser informado!");
 		
@@ -48,10 +23,14 @@ public class UsuarioController extends HttpServlet {
 		
 		LocalDate.parse(usuarioDTO.getDataNascimento(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 		
-		usuarioBusiness.salvarUsuario(usuarioDTO);
+		LocalDate dataDeNascimento = LocalDate.parse(usuarioDTO.getDataNascimento(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+
+		UsuarioEntity usuarioEntity = new UsuarioEntity();
+		usuarioEntity.setNome(usuarioDTO.getNomeDoUsuario());
+		usuarioEntity.setEmail(usuarioDTO.getEmailDoUsuario());
+		usuarioEntity.setSenha(usuarioDTO.getSenhaDoUsuario());
+		usuarioEntity.setDtNasc(dataDeNascimento);
 		
-        req.getRequestDispatcher("jsp/usuario-cadastrado-com-sucesso.jsp").forward(req, resp);
+		usuarioBusiness.salvarUsuario(usuarioEntity);
 	}
-	
-	
 }

@@ -12,19 +12,10 @@ public class UsuarioBusiness {
 	
 	private UsuarioDAO dao = new UsuarioDAO();
 	
-	public void salvarUsuario(UsuarioDTO usuarioDTO) {
-		
-		LocalDate dataDeNascimento = LocalDate.parse(usuarioDTO.getDataNascimento(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-
-		long diferencaIdade = ChronoUnit.YEARS.between(dataDeNascimento, LocalDate.now());
+	public void salvarUsuario(UsuarioEntity usuarioEntity) {
+		long diferencaIdade = ChronoUnit.YEARS.between(usuarioEntity.getDtNasc(), LocalDate.now());
 		if (diferencaIdade < 18)
 			throw new RuntimeException("Usuário deve ter mais de 18 anos!");
-		
-		UsuarioEntity usuarioEntity = new UsuarioEntity();
-		usuarioEntity.setNome(usuarioDTO.getNomeDoUsuario());
-		usuarioEntity.setEmail(usuarioDTO.getEmailDoUsuario());
-		usuarioEntity.setSenha(usuarioDTO.getSenhaDoUsuario());
-		usuarioEntity.setDtNasc(dataDeNascimento);
 		
 		dao.salvarUsuario(usuarioEntity);
 	}
