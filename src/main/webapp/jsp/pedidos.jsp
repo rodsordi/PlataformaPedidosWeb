@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Usuarios</title>
+	<title>Pedidos</title>
 	<jsp:include page="head.jsp" />
 </head>
 <body>
 	<jsp:include page="header.jsp" />
 	<main>
-		Usuários
+		Pedidos
 	</main>
 	<jsp:include page="footer.jsp" />
 </body>
