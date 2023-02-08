@@ -7,8 +7,4 @@
 
 	<display-name>Plataforma Pedido Web</display-name>
 
-	<welcome-file-list>
-		<welcome-file>jsp/home.jsp</welcome-file>
-	</welcome-file-list>
-	
 </web-app>
